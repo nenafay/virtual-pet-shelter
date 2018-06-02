@@ -3,7 +3,7 @@ package org.wcci.virtual_pet_shelter;
 public class VirtualPet {
 	int hunger = 0;
 	int thirst = 0;
-	int boredom = 0;
+	int boredom = 0; 
 	int size = 1;
 	int rootConstriction = 1;
 	

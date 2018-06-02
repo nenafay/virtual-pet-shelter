@@ -4,7 +4,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.Collection;
@@ -52,10 +51,9 @@ public class VirtualPetShelterTest {
 	@Test
 	public void allowsAdoption() {
 		underTest.addPet(pet1);
-		underTest.addPet(pet2);
-		underTest.adoptPet(pet1.getPetName());
-		Collection<VirtualPet> allPets = underTest.getAllPets();
-		assert false; if(VirtualPetShelter, contains(pet1));
+		underTest.adopt(pet1);
+		VirtualPet foundPet = underTest.findPet(pet1.getPetName());
+		assertThat(foundPet, is(nullValue()));
 	}
 	@Test
 	public void retursnSpecificPetGivenName() {
@@ -82,7 +80,7 @@ public class VirtualPetShelterTest {
 		underTest.tick(pet1.getPetName(), 1, 1, 1);
 		assertThat(pet1.getPetHunger(), is(1));
 		assertThat(pet1.getPetThirst(), is(1));
-		assertThat(pet1.getPetBoredom(, is(1));
+		assertThat(pet1.getPetBoredom(), is(1));
 		
 	}
 }

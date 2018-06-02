@@ -18,14 +18,14 @@ public class VirtualPetShelter {
 	}
 
 	public Collection<VirtualPet> getAllPets() {
-		return pets.values();
+		return pets.values(); 
 	}
 	
 	// Should accept a String instead of a VirtualPet
 	// Should call .remove() and pass that petName
 	// 
-	public void adoptPet(String petName) {
-		pets.remove(petName);
+	public void adopt(VirtualPet pet) {
+		pets.remove(pet.getPetName(), pet);
 	}
 
 	public VirtualPet tick(String petName, int petHunger, int petThirst, int petBoredom) {

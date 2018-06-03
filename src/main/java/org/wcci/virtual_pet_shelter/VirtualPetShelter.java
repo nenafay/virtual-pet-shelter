@@ -3,6 +3,8 @@ package org.wcci.virtual_pet_shelter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class VirtualPetShelter {
 
@@ -21,15 +23,24 @@ public class VirtualPetShelter {
 		return pets.values(); 
 	}
 	
-	// Should accept a String instead of a VirtualPet
-	// Should call .remove() and pass that petName
-	// 
 	public void adopt(VirtualPet pet) {
 		pets.remove(pet.getPetName(), pet);
 	}
 
-	public VirtualPet tick(String petName, int petHunger, int petThirst, int petBoredom) {
-		return pets.values();
+	public void tick() {
+		for (VirtualPet pets:getAllPets()) {
+			pets.tick();
+			}
 	}
 
+	public void callPet(VirtualPet pet) {
+		pets.get(pet.returnPetDescription());
+	}
+
+	public Collection<VirtualPet> returnAllPetsNames() {
+		for (Entry<String, VirtualPet> entry: pets.entrySet()) {
+		 pets.keySet();
+		}
+		return pets.keySet();
+	}
 }

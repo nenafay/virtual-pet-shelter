@@ -23,10 +23,13 @@ public class VirtualPet {
 		
 	}
 	
-	// getters
 	public String getPetName() {
 		return name;
-	}	
+	}
+	
+	public String returnPetDescription() {
+		return description;
+	}
 	public int getPetHunger() {
 		return hunger;
 	}
@@ -84,7 +87,7 @@ public class VirtualPet {
 	
 	}
 
-	public void tick(int petHunger, int petThirst, int petBoredom) {
+	public void tick() {
 		hunger++;
 		thirst++;
 		boredom++;

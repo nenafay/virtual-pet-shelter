@@ -1,5 +1,6 @@
 package org.wcci.virtual_pet_shelter;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +11,7 @@ public class VirtualPetShelter {
 
 // make map
 	Map<String, VirtualPet> pets = new HashMap<>();
-	
+
 	public void addPet(VirtualPet pet) {
 		pets.put(pet.getPetName(), pet);
 	}
@@ -37,10 +38,36 @@ public class VirtualPetShelter {
 		pets.get(pet.returnPetDescription());
 	}
 
-	public Collection<VirtualPet> returnAllPetsNames() {
-		for (Entry<String, VirtualPet> entry: pets.entrySet()) {
-		 pets.keySet();
+	public Collection<String> returnAllPetsNames() {
+		
+		Collection<String> names = new ArrayList<>();
+		names = pets.keySet();
+		return names;
+
+	}
+
+	public void feedAllPets() {
+		for(VirtualPet pets:getAllPets()) {
+			pets.beFed();
 		}
-		return pets.keySet();
+	}
+
+	public void waterAllPets() {
+		for(VirtualPet pets:getAllPets()) {
+			pets.beWatered();
+		}
+	}
+
+	public void allowPlay(VirtualPet pet) {
+		pets.get(pet);
+		pet.beSungTo();
+		
+	}
+	
+	public boolean hasPets() {
+		if (pets.size()>0){
+	}
+		return true;
+		
 	}
 }

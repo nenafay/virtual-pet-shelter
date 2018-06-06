@@ -29,7 +29,7 @@ public class VirtualPet {
 	
 	public String returnPetDescription() {
 		return description;
-	}
+	} 
 	public int getPetHunger() {
 		return hunger;
 	}
@@ -43,7 +43,7 @@ public class VirtualPet {
 	public int getRootConstriction() {
 		return rootConstriction;
 	}
-	public void eatPerson() {
+	public void beFed() {
 		hunger = hunger - 1;
 		
 	}
@@ -62,7 +62,7 @@ public class VirtualPet {
 
 	public boolean isWilted() {
 		return thirst < 5 && thirst > 2;
-	}
+	} 
 
 	public boolean isDry() {
 		return thirst <= 2;
@@ -70,7 +70,7 @@ public class VirtualPet {
 	}
 
 	public void beSungTo() {
-		boredom = boredom +2;
+		boredom = boredom -2;
 
 	}
 
@@ -110,7 +110,22 @@ public class VirtualPet {
 		return boredom <10;
 
 	}
-	
+
+	public void setHunger(int petHunger) {
+		this.hunger = petHunger;	
+	}
+
+	public void setThirst(int petThirst) {
+		this.thirst = petThirst;
+	}
+
+	public void setBoredom(int petBoredom) {
+		this.boredom = petBoredom;
+	}
+
+	public Object returnPetName() {
+		this.name = petName;
+	}
 	
 }
 
